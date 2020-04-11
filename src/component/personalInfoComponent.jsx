@@ -1,8 +1,7 @@
 import React from 'react';
-import reactDOM from 'react-dom';
 import {Link} from "react-router-dom";
 
-class SignupComponent extends React.Component {
+class PersonalInfoComponent extends React.Component {
     render() {
         return (
             <div className="container">
@@ -20,11 +19,6 @@ class SignupComponent extends React.Component {
                                 <input type="text" className="form-control" id="inputLName" placeholder="LastName"/>
                             </div>
                         </div>
-                        {/*<div className="form-group">*/}
-                        {/*    <label htmlFor="inputAddress">Address</label>*/}
-                        {/*    <input type="text" className="form-control form-control-sm" id="inputAddress" placeholder="1234 Main St"/>*/}
-                        {/*</div>*/}
-
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputEmail4">Email</label>
@@ -52,7 +46,7 @@ class SignupComponent extends React.Component {
                                    placeholder="Apartment, studio, or floor"/>
                         </div>
                         <div className="text-center ">
-                            <Link to="/signup/AadharDetails">
+                            <Link to="/signup/aadhar">
                                 <button type="submit" className="btn btn-primary ">Save and Continue</button>
                             </Link>
                         </div>
@@ -64,4 +58,4 @@ class SignupComponent extends React.Component {
     }
 }
 
-export default SignupComponent;
+export default PersonalInfoComponent;
