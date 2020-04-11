@@ -1,0 +1,21 @@
+@import "./../../../static/variables";
+
+#mun-body{
+  #mun-500{
+    text-align: center;
+    .head-error{
+      color: $secondary;
+      font-weight: 700;
+      font-size: 10em;
+    }
+    .error-text{
+      color: $primary;
+      font-weight: 500;
+      font-size: 2em;
+    }
+    .error-link{
+      color: $primary-300;
+      font-weight: 500;
+    }
+  }
+}

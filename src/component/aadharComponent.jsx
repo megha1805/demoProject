@@ -17,8 +17,11 @@ class AadharComponent extends React.Component {
                             <label htmlFor="Images">Enter The Image</label>
                             <input type="file" className="form-control-file" id="Images"/>
                         </div>
-                        <div className="text-center ">
-                            <Link to="/signup/pan">
+                        <div className="form-row ">
+                            <Link to="/personal">
+                                <button type="submit" className="btn btn-primary ">Previous</button>
+                            </Link>
+                            <Link to="/pan">
                                 <button type="submit" className="btn btn-primary ">Save and Continue</button>
                             </Link>
                         </div>

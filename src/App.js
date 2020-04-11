@@ -12,9 +12,9 @@ class App extends React.Component {
                 <Router>
                     <NavigationComponent> </NavigationComponent>
                     <Route path="/" exact component={PersonalInfoComponent}/>
-                    <Route path="/signup" exact component={PersonalInfoComponent}/>
-                    <Route path="/signup/pan" component={PanCardComponent}/>
-                    <Route path="/signup/aadhar" component={AadharComponent}/>
+                    <Route path="/personal" exact component={PersonalInfoComponent}/>
+                    <Route path="/pan" component={PanCardComponent}/>
+                    <Route path="/aadhar" component={AadharComponent}/>
                 </Router>
             </div>
         );

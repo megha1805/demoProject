@@ -8,7 +8,6 @@ class PersonalInfoComponent extends React.Component {
 
                 <div className="row col-6 mt-3">
                     <form>
-
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputFName">FirstName</label>
@@ -29,7 +28,6 @@ class PersonalInfoComponent extends React.Component {
                                 <input type="text" className="form-control" id="inputPoneNumber"
                                        placeholder="PhoneNumber"/>
                             </div>
-
                         </div>
                         <div className="form-group">
                             <label htmlFor="inputAddress">Address</label>
@@ -46,14 +44,13 @@ class PersonalInfoComponent extends React.Component {
                                    placeholder="Apartment, studio, or floor"/>
                         </div>
                         <div className="text-center ">
-                            <Link to="/signup/aadhar">
+                            <Link to="/aadhar">
                                 <button type="submit" className="btn btn-primary ">Save and Continue</button>
                             </Link>
                         </div>
                     </form>
                 </div>
             </div>
-
         );
     }
 }
