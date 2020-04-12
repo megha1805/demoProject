@@ -1,8 +1,20 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 
 class PanCardComponent extends React.Component {
+    state = {
+        pan: "878660758353",
+        pan_image: "",
+    }
 
+    getData() {
+        return {
+            pan: this.state.pan,
+            pan_image: this.state.pan,
+        }
+    }
+    changeDetect=(event)=>{
+        this.setState({aadhar_img: event.target.value});
+    }
     render() {
         return (
             <div className="container">
@@ -14,13 +26,10 @@ class PanCardComponent extends React.Component {
                         </div>
                         <div className="form-group">
                             <label htmlFor="Images">Enter The Image</label>
-                            <input type="file" className="form-control-file" id="Images"/>
+                            <input type="file" onChange={this.changeDetect} className="form-control-file" id="Images"/>
                         </div>
                         <div className="form-row ">
-                            <Link to="/aadhar">
-                                <button type="submit" className="btn btn-primary ">Previous</button>
-                            </Link>
-                            <button type="submit" className="btn btn-primary " onClick={this.submitData()}>submit</button>
+                            <button disabled={this.props.onSubmitEnable()} type="submit" className="btn btn-primary "onClick={() => this.props.onSubmitClick("pan",this.getData())}>submit</button>
                         </div>
                     </form>
                 </div>
@@ -28,9 +37,6 @@ class PanCardComponent extends React.Component {
         );
     }
 
-    submitData() {
-        return undefined;
-    }
 }
 
 
