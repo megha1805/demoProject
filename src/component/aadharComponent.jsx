@@ -14,7 +14,10 @@ class AadharComponent extends React.Component {
         }
     }
     changeDetect=(event)=>{
-            this.setState({aadhar_img: event.target.value});
+            this.setState({aadhar: event.target.value});
+    }
+    fileEventHandler=(event)=>{
+        this.setState({aadhar_img: event.target.files[0]});
     }
     render() {
         return (
@@ -24,11 +27,11 @@ class AadharComponent extends React.Component {
                     <form>
                         <div className="form-group">
                             <label htmlFor="inputAadhar">AadharNumber</label>
-                            <input type="text" className="form-control" id="inputAadhar" placeholder="Aadhar number"/>
+                            <input type="text" className="form-control" id="inputAadhar" onChange={this.changeDetect} placeholder="Aadhar number"/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="Images">Enter The Image</label>
-                            <input type="file" className="form-control-file" id="Images" onChange={this.changeDetect}/>
+                            <input type="file" className="form-control-file" id="Images" onChange={this.fileEventHandler}/>
                         </div>
                         <div className="form-row ">
                             <Link to="/pan">

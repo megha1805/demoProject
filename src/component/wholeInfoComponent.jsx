@@ -1,71 +1,56 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Col, Container, Form, Image, Row} from "react-bootstrap"
 
 class WholeInfoComponent extends React.Component {
     render() {
-        // name: null,
-        //     email: null,
-        //     phn: null,
-        //     address: null,
-        //     aadhar: null,
-        //     aadhar_image: null,
-        //     pan: null,
-        //     pan_image: null
         return (
-            <div className="container">
-
-                <div className="row-col-4 mt-3">
-                    <form>
-                        <div className="form-row">
-                            <div className="form-group col-md-6">
-                                <label>Full Name</label>
-                                <label className="form-control">{this.props.data.name}</label>
-                            </div>
-                        </div>
-                        <div className="form-row">
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputEmail4">Email</label>
-                                <label className="form-control">{this.props.data.email}</label>
-                            </div>
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputPoneNumber">PhoneNumber</label>
-                                <label className="form-control">{this.props.data.phn}</label>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="inputAddress">Address</label>
-                            <label className="form-control">{this.props.data.address}</label>
-                        </div>
-                        <div className="form-row">
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputEmail4">Aadhar Number</label>
-                                <label className="form-control">{this.props.data.aadhar}</label>
-                            </div>
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputPoneNumber">PAN Card Number</label>
-                                <label className="form-control">{this.props.data.pan}</label>
-                            </div>
-                        </div>
-                        <div className="form-row">
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputEmail4">Aadhar Image</label>
-                                <img src={this.props.data.aadhar_image}></img>
-                            </div>
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputEmail4">PAN Image</label>
-                                <img src={this.props.data.pan_image}></img>
-                            </div>
-                        </div>
-                        <Link to="/">
-                            <button type="submit" className="btn btn-disabled ml-2 ">Edit</button>
-                        </Link>
-                        <Link to="/success">
-                            <button type="submit" className="btn btn-primary mr-2">Submit</button>
-                        </Link>
-
-                    </form>
-                </div>
-            </div>
+            <Container>
+                <Row>
+                    <Col></Col>
+                    <Col>
+                        <Form>
+                            <Form.Group as={Row}>
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control type="text" readOnly defaultValue={this.props.data.name}/>
+                            </Form.Group>
+                            <Form.Group as={Row}>
+                                <Form.Label>Email Id</Form.Label>
+                                <Form.Control type="text" readOnly defaultValue={this.props.data.emailId}/>
+                            </Form.Group>
+                            <Form.Group as={Row}>
+                                <Form.Label>Phone Number</Form.Label>
+                                <Form.Control type="text" readOnly defaultValue={this.props.data.phn}/>
+                            </Form.Group>
+                            <Form.Group as={Row}>
+                                <Form.Label>Address</Form.Label>
+                                <Form.Control as="textarea" rows="3" disabled={true}
+                                              defaultValue={this.props.data.address}/>
+                            </Form.Group>
+                            <Form.Group as={Row}>
+                                <Form.Label>Aadhar Number</Form.Label>
+                                <Form.Control as="text" readOnly defaultValue={this.props.data.aadhar}/>
+                            </Form.Group>
+                            <Form.Group as={Row}>
+                                <Form.Label>PAN Number</Form.Label>
+                                <Form.Control as="text" readOnly defaultValue={this.props.data.pan}/>
+                            </Form.Group>
+                            <Form.Group as={Row}>
+                                <Form.Label>PAN Image</Form.Label>
+                                <Col xs={6} md={4}>
+                                    <Image src="holder.js/171x180" rounded/>
+                                </Col>
+                            </Form.Group>
+                            <Form.Group as={Row}>
+                                <Form.Label>Aadhar Image</Form.Label>
+                                <Col xs={6} md={4}>
+                                    <Image src="holder.js/171x180" rounded/>
+                                </Col>
+                            </Form.Group>
+                        </Form>
+                    </Col>
+                    <Col></Col>
+                </Row>
+            </Container>
         );
     }
 }
